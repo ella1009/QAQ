@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if else</title>
+    <style>
+        .text{
+         font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!--獲取現在分鐘數給予回答-->
+    <p class="text">例題1</p>
+    <p id="g1" class="text"></p>
+    <script>
+        if (new Date().getMinutes() < 10) {
+        document.getElementById("g1").innerHTML = "現在還沒10分歐";
+        }else{
+        document.getElementById("g1").innerHTML = "現在超過10分了QAQ";
+        }
+    </script>
+    <hr>
+
+    <!--先宣告變數 再判斷-->
+    <p class="text">例題2</p>
+    <p id="g2" class="text"></p>
+    <script>
+        const a2 = new Date().getSeconds();
+        if (a2 < 15) {
+            document.getElementById("g2").innerHTML = "分秒必爭";
+        }else if (a2 < 45){
+            document.getElementById("g2").innerHTML = "秒渺邈淼藐";
+        }else{
+            document.getElementById("g2").innerHTML = "快一分鐘過去了";
+        }
+    </script>
+    <hr>
+
+    <!--使用很像if else的switch-->
+    <p class="text">例題3</p>
+    <p id="g3" class="text"></p>
+    <script>
+        var a3;
+        switch(new Date().getDay()){
+            case 1:
+                a3 = "機器學習";
+                break;
+            case 2:
+                a3 = "量子";
+                break;
+            case 3:
+                a3 = "python";
+                break;
+            case 4:
+                a3 = "C++";
+                break;
+            case 5:
+                a3 = "網頁";
+                break;
+            default:
+                a3 = "下課";
+        }
+        document.getElementById("g3").innerHTML = "今天上的課是" + a3;
+    </script>
+    <hr>
+
+    <!--輸入一個數字 按下按鈕 給出一個回應-->
+    <p class="text">例題4</p>
+    <input id="t4" class="text" type="text">
+    <br>
+    <button  class="text" onclick="a4()">輸入完按下它</button>
+    <script>
+        function a4(){
+            let b4 = document.getElementById("t4").value;
+            if( b4 < 100){
+                document.getElementById("g4").innerHTML = "很少ㄟ";
+            }else if (b4 < 1000){
+                document.getElementById("g4").innerHTML = "還可以";
+            }else{
+                document.getElementById("g4").innerHTML = "很多歐";
+            }
+        }
+    </script>
+    <p id="g4" class="text"></p>
+    <hr>
+
+    <!--使用setTimeout每兩秒改變數字-->
+    <p class="text">例題5</p>
+    <input id="t5" class="text" type="text" value="0">
+    <br>
+    <script>
+        b5 = 0
+        function a5() {　
+            if(b5 < 20) {
+                b5 = b5 + 1
+                document.getElementById("t5").value = b5
+                setTimeout("a5()", 2000)
+            }
+        }
+    a5()
+    </script>
+    <hr>
+
+</body>
+</html>
